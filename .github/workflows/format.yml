@@ -1,19 +1,14 @@
 name: Format Code
 run-name: Format Code
 
-
-on:
-  push:
-    branches:
-      - main
-      - next
-      
-concurrency:
-  group: publish
-  cancel-in-progress: false
-
 permissions:
   contents: write
+
+on:
+  workflow_run:
+    workflows: [Publish Package]
+    branches: [main, next]
+    types: [completed]
 
 jobs:
   format:
