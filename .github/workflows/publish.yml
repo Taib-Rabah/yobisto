@@ -1,0 +1,24 @@
+name: Publish Package
+run-name: Publish Package
+
+on:
+  push:
+    branches:
+      - main
+      - next
+
+jobs:
+  publish:
+    name: Publish Package
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CSI
+        uses: trdev20-actions/csi@v1.1.0
+        
+      - name: Publish
+        run: pnpm dlx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

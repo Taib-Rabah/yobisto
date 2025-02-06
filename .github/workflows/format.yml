@@ -1,0 +1,21 @@
+name: Format Code
+run-name: Format Code
+
+on:
+  workflow_run:
+    workflows: [Publish Package]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    name: Format Code
+    
+    uses: trdev20-actions/workflows/.github/workflows/format.yml@v1
+    with:
+      check-format-script: "ci:check-format"
+      format-script: "ci:format"
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}

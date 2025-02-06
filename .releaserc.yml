@@ -1,0 +1,4 @@
+branches:
+  - name: main
+  - name: next
+    prerelease: true
