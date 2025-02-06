@@ -11,3 +11,5 @@ export const isBoolean = (value: unknown): value is boolean => {
 };
 
 export const isUsingNext = () => true;
+
+export const help = "help";
