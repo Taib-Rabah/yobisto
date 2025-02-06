@@ -7,7 +7,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yobisto"
+    "url": "https://github.com/Taib-Rabah/yobisto"
   },
   "scripts": {
     "build": "tsup",

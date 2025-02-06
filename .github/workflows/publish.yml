@@ -1,6 +1,9 @@
 name: Publish Package
 run-name: Publish Package
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -16,7 +19,7 @@ jobs:
     steps:
       - name: CSI
         uses: trdev20-actions/csi@v1.1.0
-        
+
       - name: Publish
         run: pnpm dlx semantic-release
         env:
