@@ -9,3 +9,5 @@ export const isNumber = (value: unknown): value is number => {
 export const isBoolean = (value: unknown): value is boolean => {
   return typeof value === "boolean";
 };
+
+export const isUsingNext = () => true;
