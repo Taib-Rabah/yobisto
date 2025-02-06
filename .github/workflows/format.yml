@@ -11,6 +11,14 @@ on:
     types: [completed]
 
 jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo ${{ github.event.workflow_run.head_branch }}
+          echo ${{ github.event.workflow_run.conclusion }}
+          echo ${{ github.event.workflow_run.event }}
+
   format:
     name: Format Code
 
